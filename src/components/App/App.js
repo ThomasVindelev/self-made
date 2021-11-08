@@ -15,13 +15,19 @@ export default function App() {
         return <Login setToken={setToken} />
     }
 
+    function onMouseEnter() {
+        console.log('ENTER FROM APP')
+    }
+
     return (
         <div className="wrapper">
             <h1>Application</h1>
             <BrowserRouter>
                 <Switch>
                     <Route path="/dashboard">
-                        <Dashboard />
+                        <Dashboard 
+                            onMouseEnter={onMouseEnter}
+                        />
                     </Route>
                     <Route path="/preferences">
                         <Preferences />
