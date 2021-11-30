@@ -39,6 +39,13 @@ app.use('/home', (_, res) => {
     })
 });
 
+app.post('/test', (_, res) => {
+    console.log('Kaldet gik igennem')
+    res.send({
+        response: 'API is running'
+    })
+})
+
 app.use('/login', (_, res) => {
     res.send({
         token: 'test1234'

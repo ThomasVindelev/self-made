@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 export default function Dashboard({ onMouseEnter }) {
@@ -23,6 +24,14 @@ export default function Dashboard({ onMouseEnter }) {
                 setNumber(number + 1);
             }}>Count</button>
             <button onClick={() => setNumber(number + 1)}>Number</button>
+
+            <button onClick={() => {
+                axios.post('localhost:8080/test')
+                .then(() => {
+                    console.log('test1234')
+                })
+            }}>Kald til API</button>
+
             <p>{count} count</p>
             <p>{number} number</p>
         </div>
